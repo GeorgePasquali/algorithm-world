@@ -1,22 +1,40 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
+import { MonacoEditorModule, NgxMonacoEditorConfig  } from 'ngx-monaco-editor';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ListPageComponent } from './list-page/list-page.component';
+import { CodeEditorComponent } from './code-editor/code-editor.component';
+
+
+const monacoConfig: NgxMonacoEditorConfig = {
+  baseUrl: '/assets', // configure base path for monaco editor
+  defaultOptions: { scrollBeyondLastLine: false }, // pass default options to be used
+  onMonacoLoad: () => { console.log((<any>window).monaco); } // here monaco object will be available as window.monaco use this function to extend monaco editor functionalities.
+};
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    ListPageComponent,
+    CodeEditorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    MonacoEditorModule.forRoot(monacoConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
