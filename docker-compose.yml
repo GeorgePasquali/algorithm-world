@@ -4,9 +4,16 @@ services:
     #ports:
     #- "8080:80"
   gateway:
-    build: ./api-gateway/
+    image: gateway
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    command: npm run debug
+    volumes:
+      - ./api-gateway/dist:/server/dist
     ports:
       - "3000:3000"
+      - "5858:5858"
   helloapi:
     build: ./hello-world-api/
     ports:

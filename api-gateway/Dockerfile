@@ -1,11 +1,8 @@
-FROM node
+FROM node:8-slim
 
-ADD . /app-gateway
+WORKDIR /server
 
-WORKDIR /app-gateway
-
-COPY package*.json ./
-
+COPY . /server
 RUN npm install
 
 EXPOSE 3000

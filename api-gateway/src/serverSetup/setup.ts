@@ -4,7 +4,10 @@
  * Module dependencies.
  */
 
-const app = require('../index');
+import { APIGateway } from '../index'
+const apig = new APIGateway();
+
+const app = apig.getApp();
 const debug = require('debug')('api-gateway:server');
 const http = require('http');
 

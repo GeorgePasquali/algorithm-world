@@ -1,0 +1,34 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}\\api-gateway\\src\\index.ts",
+      "outFiles": [
+        "${workspaceFolder}/**/*.js"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to Docker",
+      "preLaunchTask": "tsc-watch",
+      "protocol": "auto",
+      "port": 5858,
+      "restart": true,
+      "localRoot": "${workspaceFolder}\\api-gateway\\dist",
+      "remoteRoot": "/server/dist",
+      "outFiles": [
+        "${workspaceFolder}/api-gateway/dist/**/*.js"
+      ],
+      "skipFiles": [
+        "<node_internals>/**/*.js",
+      ]
+    },
+  ]
+}

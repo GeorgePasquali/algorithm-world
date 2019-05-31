@@ -1,11 +1,11 @@
 // NOTE: this is modified from https://github.com/dominictarr/connect-restreamer
 
-module.exports = function (options) {
+export function restreamer (options?: { property?: any; stringify?: any; modify?: any; }) {
     options = options || {}
     options.property = options.property || 'body'
     options.stringify = options.stringify || JSON.stringify
   
-    return function (req, res, next) {
+    return function (req: { [x: string]: any; method: string; removeAllListeners: { (arg0: string): void; (arg0: string): void; }; headers: { [x: string]: number; }; emit: { (arg0: string, arg1: any): void; (arg0: string): void; }; }, res: any, next: () => void) {
       if(req.method==="POST") {
         req.removeAllListeners('data')
         req.removeAllListeners('end')
