@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TopicService } from '../topic.service';
 
 @Component({
   selector: 'app-list-page',
@@ -8,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class ListPageComponent implements OnInit {
 
   listTitle: string = "List Name"
+  topics: any;
 
-  constructor() { }
+  constructor(private TopicService: TopicService) { }
 
   ngOnInit() {
+    this.getTopics();
+  }
+
+  getTopics(){
+    this.topics = this.TopicService.getTopics();
   }
 
 }

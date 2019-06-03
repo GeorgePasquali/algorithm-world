@@ -14,6 +14,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ListPageComponent } from './list-page/list-page.component';
 import { CodeEditorComponent } from './code-editor/code-editor.component';
 
+import { TopicService } from './topic.service';
+import { TopicsComponent } from './topics/topics.component';
+
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 
 const monacoConfig: NgxMonacoEditorConfig = {
   baseUrl: '/assets', // configure base path for monaco editor
@@ -28,15 +33,17 @@ const monacoConfig: NgxMonacoEditorConfig = {
     HomeComponent,
     NavbarComponent,
     ListPageComponent,
-    CodeEditorComponent
+    CodeEditorComponent,
+    TopicsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     MonacoEditorModule.forRoot(monacoConfig)
   ],
-  providers: [],
+  providers: [ TopicService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

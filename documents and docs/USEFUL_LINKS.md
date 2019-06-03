@@ -16,3 +16,8 @@
 ### Frontend
  - https://codeburst.io/getting-started-with-angular-7-and-bootstrap-4-styling-6011b206080
  - https://startbootstrap.com/snippets/
+ - https://medium.com/codingthesmartway-com-blog/angular-6-mean-stack-crash-course-part-3-connecting-front-end-to-back-end-760e26e2c74d
+
+### Dotnet Api
+ - https://medium.com/front-end-weekly/net-core-web-api-with-docker-compose-postgresql-and-ef-core-21f47351224f
+

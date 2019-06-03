@@ -1,0 +1,14 @@
+D:\Programming Projects\work-of-diploma\topicsapi\bin\Debug\netcoreapp2.1\topicsapi.deps.json
+D:\Programming Projects\work-of-diploma\topicsapi\bin\Debug\netcoreapp2.1\topicsapi.runtimeconfig.json
+D:\Programming Projects\work-of-diploma\topicsapi\bin\Debug\netcoreapp2.1\topicsapi.runtimeconfig.dev.json
+D:\Programming Projects\work-of-diploma\topicsapi\bin\Debug\netcoreapp2.1\topicsapi.dll
+D:\Programming Projects\work-of-diploma\topicsapi\bin\Debug\netcoreapp2.1\topicsapi.pdb
+D:\Programming Projects\work-of-diploma\topicsapi\obj\Debug\netcoreapp2.1\topicsapi.csprojAssemblyReference.cache
+D:\Programming Projects\work-of-diploma\topicsapi\obj\Debug\netcoreapp2.1\topicsapi.csproj.CoreCompileInputs.cache
+D:\Programming Projects\work-of-diploma\topicsapi\obj\Debug\netcoreapp2.1\topicsapi.RazorAssemblyInfo.cache
+D:\Programming Projects\work-of-diploma\topicsapi\obj\Debug\netcoreapp2.1\topicsapi.RazorAssemblyInfo.cs
+D:\Programming Projects\work-of-diploma\topicsapi\obj\Debug\netcoreapp2.1\topicsapi.AssemblyInfoInputs.cache
+D:\Programming Projects\work-of-diploma\topicsapi\obj\Debug\netcoreapp2.1\topicsapi.AssemblyInfo.cs
+D:\Programming Projects\work-of-diploma\topicsapi\obj\Debug\netcoreapp2.1\topicsapi.RazorTargetAssemblyInfo.cache
+D:\Programming Projects\work-of-diploma\topicsapi\obj\Debug\netcoreapp2.1\topicsapi.dll
+D:\Programming Projects\work-of-diploma\topicsapi\obj\Debug\netcoreapp2.1\topicsapi.pdb

@@ -14,7 +14,54 @@ services:
     ports:
       - "3000:3000"
       - "5858:5858"
+    networks:
+      - microservices-api  
+
   helloapi:
     build: ./hello-world-api/
     ports:
       - "3000"
+    networks:
+      - microservices-api  
+  
+  topicsapi:
+    image: topicsapi:latest
+    depends_on:
+      - "postgresdb"
+    build:
+      context: ./topicsapi
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+    environment:
+      DB_CONNECTION_STRING: "host=postgresdb;port=5432;database=educationaldb;username=eduuser;password=asdqwe"
+    networks:
+      - microservices-api  
+  
+  postgresdb:
+    image: postgres:latest
+    ports:
+      - "5432"
+    restart: always
+    volumes:
+      - db_volume:/var/lib/postgresql/data
+      - ./dbscripts/seed.sql:/docker-entrypoint-initdb.d/seed.sql
+    environment:
+      POSTGRES_USER: "eduuser"
+      POSTGRES_PASSWORD: "asdqwe"
+      POSTGRES_DB: "educationaldb"
+    networks:
+      - microservices-api
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  db_volume:
+
+networks:
+  microservices-api:
+    driver: bridge 
