@@ -12,11 +12,14 @@ namespace topicsapi.Models{
 
         }
         public DbSet<Topic> Topics { get; set; }
+
+        public DbSet<Trait> Traits { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             new TopicMap(modelBuilder.Entity<Topic>());
+            new TraitMap(modelBuilder.Entity<Trait>());
         }
     }
 }

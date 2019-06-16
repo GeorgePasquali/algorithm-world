@@ -5,7 +5,10 @@ import { TopicsComponent } from './topics/topics.component';
 import { HomeComponent } from './home/home.component';
 import { ListPageComponent } from './list-page/list-page.component';
 import { CodeEditorComponent } from './code-editor/code-editor.component';
+import { TutorialPageComponent } from './tutorial-page/tutorial-page.component';
+import { TraitsPageComponent } from "./traits-page/traits-page.component";
 import { from } from 'rxjs';
+
 
 
 
@@ -19,6 +22,8 @@ const routes: Routes = [
   { path: 'topics',component: TopicsComponent },
   { path: 'list', component: ListPageComponent },
   { path: 'codetest', component: CodeEditorComponent },
+  { path: 'tutorial', component: TutorialPageComponent },
+  { path: 'trait/:id', component: TraitsPageComponent },
 
   // препратка към главен компонент
   { path: '**', redirectTo: '' }

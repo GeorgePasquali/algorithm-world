@@ -9,6 +9,7 @@ import { Topic } from '../Models/Topic';
 })
 export class TopicsComponent implements OnInit {
 
+  title: string = "What Are You interested In?";
   topics: Topic[];
 
   constructor(private topicService: TopicService) { }

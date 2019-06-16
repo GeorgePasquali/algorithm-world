@@ -17,8 +17,8 @@ services:
     networks:
       - microservices-api  
 
-  helloapi:
-    build: ./hello-world-api/
+  algorithmservice:
+    build: ./algorithms-service/
     ports:
       - "3000"
     networks:
@@ -53,11 +53,27 @@ services:
     networks:
       - microservices-api
 
+  mongodb:
+    image: mongo
+    networks:
+      - microservices-api
+
   adminer:
     image: adminer
     restart: always
     ports:
       - 8080:8080
+    networks:
+      - microservices-api
+
+  ccompilerservice:
+    build: ./ccompilerservice/
+    ports:
+      - "3002:3000"
+    networks:
+      - microservices-api  
+  
+
 
 volumes:
   db_volume:

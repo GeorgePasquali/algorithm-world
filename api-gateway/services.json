@@ -1,7 +1,7 @@
 [
     {
-      "name": "helloapi",
-      "host": "helloapi",
+      "name": "algorithmservice",
+      "host": "algorithmservice",
       "port": "3000",
       "protocol": "http",
       "rootPath": "api/v1",

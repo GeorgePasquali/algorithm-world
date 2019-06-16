@@ -13,8 +13,11 @@ export class APIGateway {
   private readonly expressInstance: any = express();
 
   constructor() {
+    // Настройваме библиотеки, които обработват заявката.
     this.setUpApp(this.expressInstance);
+    // Създаваме път, който достъпваме за да проверим дали сървъра работи.
     this.setWelcomeRoute(this.expressInstance)
+    // имплементираме функционалността, където казваме при коя заявка към коя услуга да изисква отговор
     this.bootstrapServices(this.expressInstance);
   }
 
@@ -41,7 +44,9 @@ export class APIGateway {
   }
 
   bootstrapServices(app){
+    // Обхождаме всички конфигурации в services.json конфигурационен файл
     services.forEach(service => {
+
 
       const {name, host, port} = service
       const rootPath = service.rootPath || "";
@@ -49,16 +54,17 @@ export class APIGateway {
       
       console.log(`Adding service: ${protocol}://${host}:${port}/${rootPath}`);
 
+      // Тук достъпваме написани от нас библиотеки, които искаме да
+      // повлиаят на заявката по някакъв начин (това е добро място за имплементиране на автентикация)
       let middleware = [];
       if (service.middleware) {
         middleware = service.middleware.map(text => require(`./middleware/${text}`));
       }
 
-      // need to restream the request so that it can be proxied
+      // restream-ваме заявката за да може да бъде препратена.
       middleware.push(restreamer());
 
-      
-
+      // настройваме сървърът да препраща заявките към зададената конфигурация
       app.use(`/api/${name}*`, middleware, (req, res, next) => {
         const newPath = url.parse(req.originalUrl).pathname.replace(`/api/${name}`, rootPath);
         console.log(`Forwarding request to: ${newPath}`);

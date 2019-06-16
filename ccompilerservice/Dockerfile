@@ -16,5 +16,4 @@ COPY . .
 
 #FROM gcc:4.9
 
-EXPOSE 8080
 CMD [ "npm", "start" ]

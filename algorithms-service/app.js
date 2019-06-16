@@ -15,6 +15,8 @@ app.get('/', function(req,res){
   });
 });
 
+
+// http://localhost:3000/api/algorithmservice/hello
 app.all('/api/v1/hello', function(req, res) {
   const response = {
     message: 'hello',

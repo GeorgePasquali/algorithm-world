@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MarkdownModule } from 'ngx-markdown';
 
 
 
@@ -18,6 +19,8 @@ import { TopicService } from './topic.service';
 import { TopicsComponent } from './topics/topics.component';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TutorialPageComponent } from './tutorial-page/tutorial-page.component';
+import { TraitsPageComponent } from './traits-page/traits-page.component';
 
 
 const monacoConfig: NgxMonacoEditorConfig = {
@@ -34,14 +37,17 @@ const monacoConfig: NgxMonacoEditorConfig = {
     NavbarComponent,
     ListPageComponent,
     CodeEditorComponent,
-    TopicsComponent
+    TopicsComponent,
+    TutorialPageComponent,
+    TraitsPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MonacoEditorModule.forRoot(monacoConfig)
+    MonacoEditorModule.forRoot(monacoConfig),
+    MarkdownModule.forRoot()
   ],
   providers: [ TopicService ],
   bootstrap: [AppComponent]
