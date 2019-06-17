@@ -20,7 +20,7 @@ services:
   algorithmservice:
     build: ./algorithms-service/
     ports:
-      - "3000"
+      - "3003:3000"
     networks:
       - microservices-api  
   
@@ -57,6 +57,11 @@ services:
     image: mongo
     networks:
       - microservices-api
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data:/data/db
 
   adminer:
     image: adminer

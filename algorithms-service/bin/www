@@ -7,6 +7,7 @@
 const app = require('../app');
 const debug = require('debug')('algorithms-service:server');
 const http = require('http');
+const mongoose = require('mongoose');
 
 /**
  * Get port from environment and store in Express.
@@ -20,6 +21,16 @@ app.set('port', port);
  */
 
 const server = http.createServer(app);
+
+
+mongoose
+  .connect(
+    'mongodb://mongodb:27017/algorithm-mongo-collection',
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
+
 
 /**
  * Listen on provided port, on all network interfaces.
