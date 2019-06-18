@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   { path: 'login',component: LoginComponent },
   { path: 'topics',component: TopicsComponent },
-  { path: 'list', component: ListPageComponent },
+  { path: 'test', component: ListPageComponent },
   { path: 'codetest', component: CodeEditorComponent },
   { path: 'tutorial', component: TutorialPageComponent },
   { path: 'trait/:id', component: TraitsPageComponent },

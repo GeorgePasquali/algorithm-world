@@ -30,7 +30,8 @@ namespace topicsapi.Controllers
             {
                 Id = c.Id,
                 Title = c.Title,
-                Description = c.Description
+                Description = c.Description,
+                ImageUrl = c.ImageUrl
             }).ToList();
         }
 
