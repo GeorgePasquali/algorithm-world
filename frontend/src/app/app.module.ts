@@ -21,6 +21,7 @@ import { TopicsComponent } from './topics/topics.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TutorialPageComponent } from './tutorial-page/tutorial-page.component';
 import { TraitsPageComponent } from './traits-page/traits-page.component';
+import { ArticlesComponent } from './articles/articles.component';
 
 
 const monacoConfig: NgxMonacoEditorConfig = {
@@ -39,7 +40,8 @@ const monacoConfig: NgxMonacoEditorConfig = {
     CodeEditorComponent,
     TopicsComponent,
     TutorialPageComponent,
-    TraitsPageComponent
+    TraitsPageComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,

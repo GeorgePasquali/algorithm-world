@@ -26,7 +26,7 @@ namespace topicsapi.Controllers
         [HttpGet]
         public object Get()
         {
-            return _context.Topics.Where(b => b.Title.Contains("Title")).Select((c) => new
+            return _context.Topics.Select((c) => new
             {
                 Id = c.Id,
                 Title = c.Title,

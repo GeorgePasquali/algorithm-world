@@ -8,6 +8,7 @@ import { CodeEditorComponent } from './code-editor/code-editor.component';
 import { TutorialPageComponent } from './tutorial-page/tutorial-page.component';
 import { TraitsPageComponent } from "./traits-page/traits-page.component";
 import { from } from 'rxjs';
+import { ArticlesComponent } from './articles/articles.component';
 
 
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'login',component: LoginComponent },
   { path: 'topics',component: TopicsComponent },
   { path: 'test', component: ListPageComponent },
+  { path: 'articles', component: ArticlesComponent },
   { path: 'codetest', component: CodeEditorComponent },
   { path: 'tutorial', component: TutorialPageComponent },
   { path: 'trait/:id', component: TraitsPageComponent },

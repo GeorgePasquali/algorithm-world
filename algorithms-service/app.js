@@ -3,11 +3,16 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const articleController = require('./Controllers/article');
 
+const cors = require('cors')
 const app = express();
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+var allowedOrigins = ['http://localhost:4200'];
+console.log("ADDED CORS HEADER");
+app.use(cors());
 
 
 app.get('/', function(req,res){

@@ -18,7 +18,7 @@ namespace topicsapi.Controllers
         [HttpGet]
         public object Get()
         {
-            return _context.Traits.Where(b => b.Title.Contains("Title")).Select((c) => new
+            return _context.Traits.Select((c) => new
             {
                 Id = c.Id,
                 Title = c.Title,

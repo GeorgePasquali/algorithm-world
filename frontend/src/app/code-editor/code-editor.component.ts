@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CodeEditorComponent implements OnInit {
 
   
-  editorOptions = {theme: 'vs-light', language: 'javascript'};
+  editorOptions = {theme: 'vs-light', language: 'c'};
   code: string= 'function x() {\nconsole.log("Hello world!");\n}';
 
   constructor() { }

@@ -6,6 +6,7 @@ import url = require('url');
 import services from '../services.json';
 import { proxy } from './lib/proxy';
 import { restreamer } from './lib/restreamer';
+import { cors }  from 'cors';
 
 export class APIGateway {
 
@@ -19,6 +20,7 @@ export class APIGateway {
     this.setWelcomeRoute(this.expressInstance)
     // имплементираме функционалността, където казваме при коя заявка към коя услуга да изисква отговор
     this.bootstrapServices(this.expressInstance);
+    this.addCors(this.expressInstance);
   }
 
   /**
@@ -29,6 +31,12 @@ export class APIGateway {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(cookieParser());
+  }
+
+  private addCors(app) {
+    var allowedOrigins = ['http://localhost:4200'];
+    console.log("ADDED CORS HEADER");
+    app.use(cors());
   }
 
   /**
@@ -43,15 +51,15 @@ export class APIGateway {
     });
   }
 
-  bootstrapServices(app){
+  bootstrapServices(app) {
     // Обхождаме всички конфигурации в services.json конфигурационен файл
     services.forEach(service => {
 
 
-      const {name, host, port} = service
+      const { name, host, port } = service
       const rootPath = service.rootPath || "";
       const protocol = service.protocol || "http";
-      
+
       console.log(`Adding service: ${protocol}://${host}:${port}/${rootPath}`);
 
       // Тук достъпваме написани от нас библиотеки, които искаме да

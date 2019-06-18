@@ -22,7 +22,10 @@ services:
     ports:
       - "3003:3000"
     networks:
-      - microservices-api  
+      - microservices-api 
+    depends_on:
+      - "mongodb"
+    
   
   topicsapi:
     image: topicsapi:latest

@@ -9,6 +9,7 @@ import { Trait } from '../Models/Trait';
   styleUrls: ['./traits-page.component.scss']
 })
 export class TraitsPageComponent implements OnInit {
+  title: string = "What are you going to work on?";
   @Input() traits: Trait[] = [];
   navigated = false; // true if navigated here
 
@@ -32,4 +33,7 @@ export class TraitsPageComponent implements OnInit {
     });
   }
 
+  public getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
 }

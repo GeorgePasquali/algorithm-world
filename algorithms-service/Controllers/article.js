@@ -11,6 +11,7 @@ exports.create = (req, res) => {
 
     // Create a Note
     const article = new Article({
+        title: req.body.title,
         traitId: req.body.traitId, 
         articleDescription: req.body.articleDescription,
         cCode: req.body.cCode,
@@ -42,18 +43,18 @@ exports.findAll = (req, res) => {
 
 // Find a single note with a noteId
 exports.findOne = (req, res) => {
-    Article.findById(req.params.traitId)
+    Article.findById(req.params.articleId)
     .then(articles => {
         if(!articles) {
             return res.status(404).send({
-                message: "articles not found with id " + req.params.traitId
+                message: "articles not found with id " + req.params.articleId
             });            
         }
         res.send(articles);
     }).catch(err => {
         if(err.kind === 'ObjectId') {
             return res.status(404).send({
-                message: "articles not found with id " + req.params.traitId
+                message: "articles not found with id " + req.params.articleId
             });                
         }
         return res.status(500).send({
